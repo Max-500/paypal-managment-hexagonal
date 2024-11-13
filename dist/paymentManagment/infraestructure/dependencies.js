@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createOrderController = void 0;
+const createOrderUseCase_1 = require("../application/createOrderUseCase");
+const createOrderController_1 = require("./controllers/createOrderController");
+const paypalMySQLRepository_1 = require("./repositories/paypalMySQLRepository");
+const paypalMySQLRepository = new paypalMySQLRepository_1.PaypalMySQLRepository();
+const currentRepository = paypalMySQLRepository;
+const createOrderUseCase = new createOrderUseCase_1.CreateOrderUseCase(currentRepository);
+exports.createOrderController = new createOrderController_1.CreateOrderController(createOrderUseCase);
