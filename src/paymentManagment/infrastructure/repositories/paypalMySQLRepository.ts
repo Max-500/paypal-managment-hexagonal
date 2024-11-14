@@ -1,13 +1,13 @@
 import axios, { AxiosError } from "axios";
 import { CreateOrderData } from "../../domain/entities/CreateOrderData";
 import { PaymentOrder } from "../../domain/entities/PaymentOrder";
-import { PaymentsRepository } from "../../domain/repositories/paymentRepository";
+import { PaymentsGateway } from "../../domain/ports/paymentGateway";
 import { HttpError } from "../errors/error";
 import { CapturedPayment } from "../../domain/entities/CapturedPayment";
 
 process.loadEnvFile();
 
-export class PaypalMySQLRepository implements PaymentsRepository {
+export class PaypalMySQLRepository implements PaymentsGateway {
   private readonly CLIENT_ID = process.env.CLIENT_ID || 'no-clientID';
   private readonly BASE_URL = process.env.BASE_URL || 'no-base-url';
   private readonly SECRET = process.env.SECRET || 'no-secret';

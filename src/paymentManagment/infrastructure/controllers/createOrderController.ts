@@ -8,7 +8,7 @@ export class CreateOrderController {
 
     execute: RequestHandler = async (req: Request, res: Response) => {
         try {
-            const { amount, currencyCode, description } = req.body;
+            const { amount, currencyCode } = req.body;
             const requiredFields = ["amount", "currencyCode"];
 
             const missingFields = requiredFields.filter((field) => req.body[field] === undefined);
@@ -20,7 +20,7 @@ export class CreateOrderController {
                 return;
             }
 
-            const response = await this.useCase.execute(amount as number, currencyCode, description);
+            const response = await this.useCase.execute(amount as number, currencyCode);
             res.status(201).json({ data: response, message: "Orden Creada Correctamente" });
             return;
         } catch (error) {

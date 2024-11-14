@@ -11,7 +11,7 @@ export class CreateOrderData {
     readonly currencyCode: string;
 
 
-    constructor(amount: number, currencyCode: string, description?: string) {
+    constructor(amount: number, currencyCode: string) {
         this.amount = amount;
         this.currencyCode = currencyCode.toUpperCase();
     }
