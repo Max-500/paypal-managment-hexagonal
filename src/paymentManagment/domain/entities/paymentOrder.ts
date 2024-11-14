@@ -10,7 +10,6 @@ export class PaymentOrder {
       this.status = status;
       this.createdAt = new Date();
       this.approveLink = links.find((link) => link.rel === 'approve')?.href;
-      this.captureLink = links.find((link) => link.rel === 'capture')?.href;
     }
   
     getId(): string {
