@@ -86,9 +86,11 @@ export class PaypalMySQLRepository implements PaymentsRepository {
         const data = (axiosError.response?.data as { details: any[] }).details[0];
         if (status === 422 && data.issue == 'ORDER_ALREADY_CAPTURED') {
           throw new HttpError("Intento duplicado de captura.", 422);
-        } else if(status == 404 && data.issue == 'INVALID_RESOURCE_ID') {
+        } 
+        if(status == 404 && data.issue == 'INVALID_RESOURCE_ID') {
           throw new HttpError("Identificador de orden invalida", 404);
-        } else if(status == 422 && data.issue == 'ORDER_NOT_APPROVED') {
+        }
+        if(status == 422 && data.issue == 'ORDER_NOT_APPROVED') {
           throw new HttpError("Orden no aprovada", 422);
         }
         const message = axiosError.response?.data || axiosError.message;
