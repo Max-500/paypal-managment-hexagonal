@@ -1,4 +1,4 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn } from "typeorm";
+import { Entity, Column, CreateDateColumn, PrimaryColumn, UpdateDateColumn } from "typeorm";
 
 @Entity("orders")
 export class Order {
@@ -14,6 +14,6 @@ export class Order {
   @CreateDateColumn()
   createdAt!: Date;
 
-  @CreateDateColumn()
+  @UpdateDateColumn()
   updatedAt!: Date;
 }

@@ -7,13 +7,13 @@ export class CaptureOrderController {
 
     execute: RequestHandler = async(req: Request, res: Response) => {
         try {
-            const { orderID } = req.body;
-            if(orderID == undefined) {
-                res.status(400).json({ message: "No se esta enviando el id de la orden" });
+            const { orderID, userID } = req.body;
+            if(orderID == undefined || userID == undefined) {
+                res.status(400).json({ message: "No se esta enviando todos los datos correctamente" });
                 return;
             }
 
-            const response = await this.useCase.execute(orderID);
+            const response = await this.useCase.execute(orderID, userID);
             res.status(201).json({ data: response, message: "Orden Capturada Correctamente" });
             return;
         } catch (error) {

@@ -2,7 +2,7 @@ import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } fro
 
 @Entity("premium_subscriptions")
 export class PremiumSubscription {
-  @PrimaryColumn("varchar", { length: 36 })
+  @PrimaryColumn("uuid")
   id!: string; // Cambiado para coincidir con la migración
 
   @Column("varchar", { length: 36 })
@@ -14,15 +14,15 @@ export class PremiumSubscription {
   @Column("varchar", { length: 255 })
   transactionId!: string; // ID de la transacción capturada (opcional)
 
-  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  @Column({ type: "timestamp"})
   startDate!: Date; // Fecha de inicio de la suscripción
 
-  @Column({ type: "timestamp", default: () => "'2030-01-01 00:00:00'" })
+  @Column({ type: "timestamp",  })
   endDate!: Date; // Fecha de fin de la suscripción
 
-  @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  @CreateDateColumn()
   createdAt!: Date; // Fecha de creación del registro
 
-  @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  @UpdateDateColumn()
   updatedAt!: Date; // Fecha de última actualización
 }
