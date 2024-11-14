@@ -6,7 +6,11 @@ import { PremiumSubscription } from "../database/models/PremiumSuscription";
 export class PaymentMySQLRepository implements PaymentRepository {
     constructor(private readonly repositoryOrder: Repository<Order>, private readonly repositorySuscription: Repository<PremiumSubscription>) {}
 
-    
+    async isUserSubscribed(userId: string): Promise<boolean | null> {
+        const data: PremiumSubscription | null = await this.repositorySuscription.findOne({ where: { userId }, order: { endDate: 'DESC' } });
+        if(data == null) return null;
+        return data.endDate > new Date();
+    }
 
     async saveOrder(_order: { id: string, amount: number, currencyCode: string; }): Promise<void> {
         const order = this.repositoryOrder.create(_order);

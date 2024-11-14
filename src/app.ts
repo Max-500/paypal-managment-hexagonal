@@ -8,7 +8,7 @@ const app: Application = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use('/', paymentRouter);
+app.use('/payments', paymentRouter);
 
 process.loadEnvFile();
 const PORT = process.env.PORT || 3000;
