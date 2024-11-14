@@ -6,8 +6,7 @@ import { HttpError } from "../errors/error";
 import { CapturedPayment } from "../../domain/entities/CapturedPayment";
 
 process.loadEnvFile();
-
-export class PaypalMySQLRepository implements PaymentsGateway {
+export class PaypalGateway implements PaymentsGateway {
   private readonly CLIENT_ID = process.env.CLIENT_ID || 'no-clientID';
   private readonly BASE_URL = process.env.BASE_URL || 'no-base-url';
   private readonly SECRET = process.env.SECRET || 'no-secret';

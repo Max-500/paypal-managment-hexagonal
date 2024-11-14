@@ -1,4 +1,6 @@
 import { DataSource } from "typeorm";
+import { Order } from "./models/Order";
+import { PremiumSubscription } from "./models/PremiumSuscription";
 
 process.loadEnvFile();
 export const AppDataSource = new DataSource({
@@ -8,7 +10,7 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [__dirname + "/models/**/*.ts"],
+  entities: [Order, PremiumSubscription],
   migrations: [__dirname + "/migrations/**/*.ts"],
   synchronize: false,
   logging: true,
