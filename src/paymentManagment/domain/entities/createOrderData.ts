@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, Min, IsOptional, Length } from "class-validator";
+import { IsNotEmpty, IsNumber, Min, Length } from "class-validator";
 
 export class CreateOrderData {
     @IsNotEmpty({ message: "El campo 'amount' es requerido" })
@@ -10,14 +10,10 @@ export class CreateOrderData {
     @Length(3, 3, { message: "El código de moneda debe tener exactamente 3 caracteres" })
     readonly currencyCode: string;
 
-    @IsOptional()
-    @IsNotEmpty({ message: "La descripción no puede estar vacía si se proporciona" })
-    readonly description?: string;
 
     constructor(amount: number, currencyCode: string, description?: string) {
         this.amount = amount;
         this.currencyCode = currencyCode.toUpperCase();
-        this.description = description;
     }
 
     async validate() {

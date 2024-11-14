@@ -1,6 +1,6 @@
-import { CapturedPayment } from "../entities/capturedPayment";
-import { CreateOrderData } from "../entities/createOrderData";
-import { PaymentOrder } from "../entities/paymentOrder";
+import { CapturedPayment } from "../entities/CapturedPayment";
+import { CreateOrderData } from "../entities/CreateOrderData";
+import { PaymentOrder } from "../entities/PaymentOrder";
 
 export interface PaymentsRepository {
     createOrder(order: CreateOrderData): Promise<PaymentOrder>;

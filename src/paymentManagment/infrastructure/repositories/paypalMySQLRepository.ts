@@ -1,9 +1,9 @@
 import axios, { AxiosError } from "axios";
-import { CreateOrderData } from "../../domain/entities/createOrderData";
-import { PaymentOrder } from "../../domain/entities/paymentOrder";
+import { CreateOrderData } from "../../domain/entities/CreateOrderData";
+import { PaymentOrder } from "../../domain/entities/PaymentOrder";
 import { PaymentsRepository } from "../../domain/repositories/paymentRepository";
 import { HttpError } from "../errors/error";
-import { CapturedPayment } from "../../domain/entities/capturedPayment";
+import { CapturedPayment } from "../../domain/entities/CapturedPayment";
 
 process.loadEnvFile();
 
