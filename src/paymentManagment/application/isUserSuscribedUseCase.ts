@@ -11,6 +11,6 @@ export class IsUserSuscribedUseCase {
             "message": "El usuario no tiene ninguna suscripcion activa"
         };
 
-        return {"isPremium": true, "message": "El usuario tiene ninguna suscripcion activa"};
+        return {"isPremium": true, "message": "El usuario tiene una suscripcion activa"};
     }
 }
