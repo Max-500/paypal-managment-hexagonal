@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import { CapturedPayment } from "../domain/entities/CapturedPayment";
-import { PaymentsGateway } from "../domain/ports/paymentGateway";
-import { PaymentRepository } from "../domain/ports/paymentRepository";
 import { HttpError } from "../infrastructure/errors/error";
+import { PaymentRepository } from "../domain/ports/PaymentRepository";
+import { PaymentsGateway } from "../domain/ports/PaymentGateway";
 
 export class CaptureOrderUseCase {
     constructor(readonly gateway: PaymentsGateway, readonly repository: PaymentRepository){}

@@ -1,7 +1,7 @@
 import { CreateOrderData } from "../domain/entities/CreateOrderData";
 import { PaymentOrder } from "../domain/entities/PaymentOrder";
-import { PaymentsGateway } from "../domain/ports/paymentGateway";
-import { PaymentRepository } from "../domain/ports/paymentRepository";
+import { PaymentsGateway } from "../domain/ports/PaymentGateway";
+import { PaymentRepository } from "../domain/ports/PaymentRepository";
 import { Validator } from "../domain/validator/validator";
 
 export class CreateOrderUseCase {

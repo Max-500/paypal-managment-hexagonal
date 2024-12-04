@@ -1,4 +1,4 @@
-import { PaymentRepository } from "../domain/ports/paymentRepository";
+import { PaymentRepository } from "../domain/ports/PaymentRepository";
 
 export class IsUserSuscribedUseCase {
     constructor(readonly repository: PaymentRepository){}

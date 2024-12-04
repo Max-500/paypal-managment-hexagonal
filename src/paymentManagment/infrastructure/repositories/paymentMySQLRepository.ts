@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import { PaymentRepository } from "../../domain/ports/paymentRepository";
+import { PaymentRepository } from "../../domain/ports/PaymentRepository";
 import { Order } from "../database/models/Order";
 import { PremiumSubscription } from "../database/models/PremiumSuscription";
 
