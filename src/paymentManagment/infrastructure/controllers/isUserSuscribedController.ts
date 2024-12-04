@@ -1,5 +1,5 @@
 import { Request, RequestHandler, Response } from "express";
-import { IsUserSuscribedUseCase } from "../../application/isUserSuscribedUseCase";
+import { IsUserSuscribedUseCase } from "../../application/IsUserSuscribedUseCase";
 
 export class IsUserSuscribedController {
     constructor(readonly useCase: IsUserSuscribedUseCase){}

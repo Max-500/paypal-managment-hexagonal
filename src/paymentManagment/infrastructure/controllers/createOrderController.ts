@@ -1,5 +1,5 @@
 import { Request, Response, RequestHandler } from "express";
-import { CreateOrderUseCase } from "../../application/createOrderUseCase";
+import { CreateOrderUseCase } from "../../application/CreateOrderUseCase";
 import { ValidationException } from "../../domain/validator/validator";
 import { HttpError } from "../errors/error";
 

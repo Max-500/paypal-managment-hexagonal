@@ -1,6 +1,6 @@
-import { CaptureOrderUseCase } from "../application/captureOrderUseCase";
-import { CreateOrderUseCase } from "../application/createOrderUseCase";
-import { IsUserSuscribedUseCase } from "../application/isUserSuscribedUseCase";
+import { CaptureOrderUseCase } from "../application/CaptureOrderUseCase";
+import { CreateOrderUseCase } from "../application/CreateOrderUseCase";
+import { IsUserSuscribedUseCase } from "../application/IsUserSuscribedUseCase";
 import { CaptureOrderController } from "./controllers/captureOrderController";
 import { CreateOrderController } from "./controllers/createOrderController";
 import { IsUserSuscribedController } from "./controllers/isUserSuscribedController";

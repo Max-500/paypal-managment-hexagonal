@@ -1,5 +1,5 @@
 import { Request, RequestHandler, Response } from "express";
-import { CaptureOrderUseCase } from "../../application/captureOrderUseCase";
+import { CaptureOrderUseCase } from "../../application/CaptureOrderUseCase";
 import { HttpError } from "../errors/error";
 
 export class CaptureOrderController {
